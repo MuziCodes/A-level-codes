@@ -1,21 +1,11 @@
-# Take an example list and key to search
-a = [10, 20, 3, 44, 5, -6]
+# Input list and item to search (key)
+a = [int(x) for x in input('Enter elements separated by space: ').split()]
 key = int(input('Enter element to search: '))
 
-# Using For loop
-for i in range(len(a)):  
+# Then search one by one using for loop
+for i in range(len(a)):
     if a[i] == key:
-        print('key is at element', i + 1) # +1 because loop starts at 0
+        print('key is at element', i + 1)  # +1 because loop starts at 0
         break
 else:
-    print(key, 'not available')
-
-# Using While loop
-i = 0
-while i < len(a):
-    if a[i] == key:
-        print('key is at element', i + 1)
-        break # stops further execution
-    i += 1
-else: # ← be careful of indentation
     print(key, 'not available')
