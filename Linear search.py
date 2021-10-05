@@ -12,7 +12,7 @@ length = int(input('Enter length of list ')) # to determine index of loop
 
 # append values using for-loop
 for i in range(length):
-    temp = input('Enter next value ')
+    temp = input('Enter value ')
     array.append(temp)
 
 key = input('Enter key to search ')
