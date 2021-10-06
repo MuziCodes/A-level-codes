@@ -1,5 +1,4 @@
 def linsearch(array, key):
-    """Return string whether key is found in list"""
     for i in range(len(array)):
         if array[i] == key:
             print('Found at position', i + 1)
