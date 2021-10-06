@@ -1,17 +1,27 @@
-a = [int(x) for x in input('Enter elements seperated by space\n').split()]
-key = int(input('Enter element to search: '))
-
-low = 0
-high = len(a)-1
-
-while low <= high:
-    mid = (low + high) // 2
-    if a[mid] == key:
-        print('key is at element', mid + 1)
-        break
-    elif a[mid] < key:
-        low = mid + 1
+def binsearch(arr, key):
+    """Binary search works on sorted list"""
+    lowB = 0       # lower bound
+    upB = len(arr)-1 # upper bound
+    
+    while lowB <= upB:
+        mid = (lowB + upB) // 2 # int of mid value
+        if arr[mid] == key:
+            print('key is at element', mid + 1)
+            break
+        elif arr[mid] < key: # if key at right of list
+            lowB = mid + 1
+        else:              # if key at left of list
+            upB = mid - 1
     else:
-        high = mid - 1
-else:
-    print('Not found')
+        print('Not found')
+
+arr = [] # empty list to append values
+length = int(input('Enter length of list ')) # to determine index of loop
+
+# append values using for-loop
+for i in range(length):
+    temp = input('Enter value ')
+    arr.append(temp)
+
+key = input('Enter key to search ')
+binsearch(arr, key)
