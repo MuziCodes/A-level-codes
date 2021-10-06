@@ -1,8 +1,16 @@
-def insertionSort(a):
-    for i in range(1, len(a)):
-        key = a[i]
-        j = i - 1
-        while j >= 0 and key < a[j]:
-            a[j + 1] = a[j]
-            j = j - 1
-        a[j + 1] = key
+def insertsort(arr):
+    for i in range(1, len(arr)):
+        pivot = arr[i]
+        while arr[i - 1] > pivot and i > 0: # if left item larger, swap & use only positive index
+            arr[i], arr[i-1] = arr[i-1], arr[i] # swap
+            i = i-1 # decrement
+
+arr = [] # empty list to append values
+length = int(input('Enter length of list ')) # to determine index of loop
+
+# append values using for-loop
+for i in range(length):
+    temp = input('Enter value ')
+    arr.append(temp)
+
+insertsort(arr)
