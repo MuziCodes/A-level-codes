@@ -4,7 +4,6 @@ base = 0
 top = -1  # so 1st element will be index 0 after top += 1 below
 item = None  # initialise item to push
 
-
 def push(item):
     global top  # global variable to affect outside function
     if top < size - 1:  # -1 since 1st index is 0, basically if top not max..
@@ -13,13 +12,11 @@ def push(item):
     else:
         print("Overflow! cannot push.", stack)
 
-
 # ALTERNATIVE:
 # if len(stack) == size:
 #     print("Overflow! cannot push.", stack)
 # else:
 #     stack.append(item)
-
 
 def pop():
     global top, base, item
@@ -31,13 +28,11 @@ def pop():
         top = top - 1
         print(item, "is removed")
 
-
 # ALTERNATIVE:
 # if len(stack) == 0:
 #   print("Underflow! cannot pop.")
 # else:
 #   stack = stack[:-1]
-
 
 while True:  # runs infinitely until break
     option = int(input("""Choose an option:
