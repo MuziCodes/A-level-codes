@@ -6,7 +6,6 @@ nullp = -1
 startp = -1
 heapp = 0
 
-
 def search(key):
     itemp = startp
     while itemp != nullp:
@@ -16,7 +15,6 @@ def search(key):
         itemp = pointers[itemp]
     else:
         print(key, "not found")
-
 
 def add(x):
     global startp, heapp, pointers
@@ -29,7 +27,6 @@ def add(x):
         elements[startp] = x
         pointers[startp] = temp
         pointers[0], pointers[-1] = nullp, nullp
-
 
 def delete(x):  # heap decrements by 1 after this why? copied from textbook exactly
     global startp, heapp
@@ -49,7 +46,6 @@ def delete(x):  # heap decrements by 1 after this why? copied from textbook exac
             pointers[index] = heapp
             heapp = index
             pointers[oldindex] = temp
-
 
 while True:
     option = int(input(f"""Choose an option:
