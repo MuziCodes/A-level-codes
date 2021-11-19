@@ -58,8 +58,8 @@ while True:
 (3) Delete
 (4) Exit
 
-element list:  {elements}
-pointer list: {pointers}
+Element list:  {elements}
+Pointer list: {pointers}
 Start pointer:  {startp}
 Heap pointer: {heapp}
 
