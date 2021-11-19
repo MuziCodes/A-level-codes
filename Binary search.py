@@ -1,7 +1,7 @@
 def binsearch(arr, key):
     """Binary search works on sorted list"""
     lowB = 0       # lower bound
-    upB = len(arr)-1 # upper bound
+    upB = len(arr) - 1 # upper bound
     
     while lowB <= upB:
         mid = (lowB + upB) // 2 # int of mid value
