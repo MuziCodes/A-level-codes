@@ -1,7 +1,12 @@
-arr = [] # empty list to append values
-length = int(input('Enter length of list: ')) # to determine index of loop
+arr = []
+length = int(input('Enter length of list: '))
 
-# append values using for-loop
+# append values to empty list using for-loop
+
 for i in range(length):
-    temp = int(input('Enter value to add: '))
+    temp = int(input('Enter element to add: '))
     arr.append(temp)
+
+# ALTERNATIVE:
+# arr = [int(i) for i in input('Enter elements seperated by spaces: ').split()]
+# remove int() for string values
