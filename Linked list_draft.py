@@ -28,7 +28,7 @@ def add(x):
         pointers[startp] = temp
         pointers[0], pointers[-1] = nullp, nullp
 
-def delete(x):  # heap decrements by 1 after this why? copied from textbook exactly
+def delete(x):
     global startp, heapp
     oldindex = 0
     if startp == nullp:
@@ -42,10 +42,11 @@ def delete(x):  # heap decrements by 1 after this why? copied from textbook exac
             print(x, "not found")
         else:
             elements[index] = None
-            temp = pointers[index]
-            pointers[index] = heapp
-            heapp = index
-            pointers[oldindex] = temp
+            heapp = pointers[heapp]
+            # temp = pointers[index]
+            # pointers[index] = heapp
+            # heapp = index
+            # pointers[oldindex] = temp
 
 while True:
     option = int(input(f"""Choose an option:
@@ -76,4 +77,3 @@ choose an option → """))
         print("Please enter a value between 1-4")
 
 # Kudos to Awab for contributing to this project.
-
