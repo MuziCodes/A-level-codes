@@ -29,8 +29,7 @@ def add(x):
         pointers[0], pointers[-1] = nullp, nullp
 
 def delete(x):
-    global startp, heapp
-    oldindex = 0
+    global startp, heapp, oldindex
     if startp == nullp:
         print("Linked list is Empty - can't delete")
     else:
@@ -42,11 +41,10 @@ def delete(x):
             print(x, "not found")
         else:
             elements[index] = None
-            heapp = pointers[heapp]
-            # temp = pointers[index]
-            # pointers[index] = heapp
-            # heapp = index
-            # pointers[oldindex] = temp
+            temp = pointers[index]
+            pointers[index] = heapp
+            heapp = index
+            pointers[oldindex] = temp
 
 while True:
     option = int(input(f"""Choose an option:
