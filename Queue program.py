@@ -37,7 +37,7 @@ while True:
 (2) DeQueue
 (3) Exit
 
-Queue: {queue}
+Queue: {queue[front:end + 1]}
 
 choose an option → """))
 
