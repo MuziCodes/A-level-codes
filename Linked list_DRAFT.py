@@ -5,6 +5,7 @@ pointers = [i + 1 for i in range(size + 2)]
 nullp = -1
 startp = -1
 heapp = 0
+pointers[-1] = nullp
 
 def search(key):
     itemp = startp
@@ -16,29 +17,31 @@ def search(key):
     else:
         print(key, "not found")
 
-def add(x):
+def add(item):
     global startp, heapp, pointers
-    if heapp == nullp or heapp == size:
+    if heapp == nullp:
         print("Linked List is full - can't insert")
     else:
         temp = startp
         startp = heapp
         heapp = pointers[heapp]
-        elements[startp] = x
+        elements[startp] = item
+        if pointers[0] == 1:  # first time insert
+            pointers[0]= nullp
         pointers[startp] = temp
-        pointers[0], pointers[-1] = nullp, nullp
 
-def delete(x):
-    global startp, heapp, oldindex
+def delete(item):
+    global startp, heapp
+    oldindex = startp  # otherwise undefined
     if startp == nullp:
         print("Linked list is Empty - can't delete")
     else:
         index = startp
-        while elements[index] != x and index != nullp:
+        while elements[index] != item and index != nullp:
             oldindex = index
             index = pointers[index]
         if index == nullp:
-            print(x, "not found")
+            print(item, "not found")
         else:
             elements[index] = None
             temp = pointers[index]
@@ -52,12 +55,10 @@ while True:
 (2) Add
 (3) Delete
 (4) Exit
-
 Element list:  {elements}
 Pointer list: {pointers}
 Start pointer:  {startp}
 Heap pointer: {heapp}
-
 choose an option → """))
 
     if option == 1:
