@@ -5,6 +5,7 @@ nullp = -1
 startp = -1
 heapp = 0
 pointers[-1] = nullp
+oldindex = startp  # otherwise undefined
 
 def search(key):
     itemp = startp
@@ -31,7 +32,6 @@ def add(item):
 
 def delete(item):
     global startp, heapp
-    oldindex = startp  # otherwise undefined
     if startp == nullp:
         print("Linked list is Empty - can't delete")
     else:
