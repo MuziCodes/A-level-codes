@@ -1,7 +1,6 @@
 size = int(input("Enter size of linked list: "))
-
 elements = [None for i in range(size)]
-pointers = [i + 1 for i in range(size + 2)]
+pointers = [i + 1 for i in range(size + 2)]  # first/last is nullp so + 2
 nullp = -1
 startp = -1
 heapp = 0
