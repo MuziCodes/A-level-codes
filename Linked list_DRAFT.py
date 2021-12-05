@@ -1,9 +1,12 @@
 size = int(input("Enter size of linked list: "))
+
 elements = [None for i in range(size)]
-pointers = [i + 1 for i in range(size + 2)]  # first/last is nullp so + 2
+pointers = [i + 1 for i in range(size + 2)]
 nullp = -1
 startp = -1
 heapp = 0
+oldindex = startp
+initial_run = True
 pointers[-1] = nullp
 
 def search(key):
@@ -17,7 +20,7 @@ def search(key):
         print(key, "not found")
 
 def add(item):
-    global startp, heapp, pointers
+    global startp, heapp, pointers, initial_run
     if heapp == nullp:
         print("Linked List is full - can't insert")
     else:
@@ -25,13 +28,13 @@ def add(item):
         startp = heapp
         heapp = pointers[heapp]
         elements[startp] = item
-        if pointers[0] == 1:  # first time insert
-            pointers[0]= nullp
         pointers[startp] = temp
+        if initial_run:
+            pointers[-1] = nullp
+            initial_run = False
 
-oldindex = startp  # otherwise undefined
 def delete(item):
-    global startp, heapp
+    global startp, heapp, oldindex
     if startp == nullp:
         print("Linked list is Empty - can't delete")
     else:
@@ -73,5 +76,3 @@ choose an option → """))
         break
     else:
         print("Please enter a value between 1-4")
-
-# Kudos to Awab for contributing to this project.
