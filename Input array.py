@@ -5,7 +5,7 @@ length = int(input('Enter length of list: '))
 
 for i in range(length):
     temp = int(input('Enter element to add: '))
-    arr.append(temp)
+    arr.append(temp)  # arr[length:length] = temp appends using slicing
 
 # ALTERNATIVE:
 # arr = [int(i) for i in input('Enter elements seperated by spaces: ').split()]
