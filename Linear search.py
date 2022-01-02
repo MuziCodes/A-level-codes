@@ -3,5 +3,5 @@ def linsearch(arr, key):
         if arr[i] == key:
             print('Found at position', i + 1)
             break
-    else:
+    else:  # ← BEWARE of indentation
         print('Not found')
