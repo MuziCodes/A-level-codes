@@ -12,5 +12,5 @@ def binsearch(arr, key):
             lowB = mid + 1
         else:              # if key at left of list
             upB = mid - 1
-    else:
+    else:  # ← BEWARE of indentation
         print('Not found')
