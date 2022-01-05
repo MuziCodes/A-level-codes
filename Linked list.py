@@ -75,3 +75,4 @@ choose an option → """))
         break
     else:
         print("Please enter a value between 1-4")
+# Has errors but sufficient for term 1 exam
