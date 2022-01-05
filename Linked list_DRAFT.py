@@ -7,7 +7,6 @@ startp = -1
 heapp = 0
 oldindex = startp
 initial_run = True
-pointers[-1] = nullp
 
 def search(key):
     itemp = startp
@@ -19,31 +18,31 @@ def search(key):
     else:
         print(key, "not found")
 
-def add(item):
-    global startp, heapp, pointers, initial_run
-    if heapp == nullp:
+def add(x):
+    global startp, heapp, pointers, initial_run 
+    if heapp == nullp or heapp == size:
         print("Linked List is full - can't insert")
     else:
         temp = startp
         startp = heapp
         heapp = pointers[heapp]
-        elements[startp] = item
+        elements[startp] = x
         pointers[startp] = temp
         if initial_run:
-            pointers[-1] = nullp
+            pointers[0], pointers[-1] = nullp, nullp
             initial_run = False
 
-def delete(item):
+def delete(x):
     global startp, heapp, oldindex
     if startp == nullp:
         print("Linked list is Empty - can't delete")
     else:
         index = startp
-        while elements[index] != item and index != nullp:
+        while elements[index] != x and index != nullp:
             oldindex = index
             index = pointers[index]
         if index == nullp:
-            print(item, "not found")
+            print(x, "not found")
         else:
             elements[index] = None
             temp = pointers[index]
