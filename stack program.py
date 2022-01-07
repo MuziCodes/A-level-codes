@@ -2,7 +2,6 @@ size = int(input("Enter size of stack: "))
 stack = [None for i in range(size)]  # make empty stack with size of input
 base = 0
 top = -1  # so 1st element will be index 0 after top += 1 below
-item = None  # initialise item to push
 
 def push(item):
     global top  # global variable to affect outside function
@@ -13,23 +12,21 @@ def push(item):
         print("Overflow! cannot push.")
 
 def pop():
-    global top, base, item
+    global top, base
     if top == base - 1:  # if stack empty
         print("Underflow! cannot pop.")
     else:
-        item = stack[top]
+        temp = stack[top]
         stack[top] = None 
         top = top - 1
-        print(item, "is removed")
+        print(temp, "is removed")
 
 while True:  # runs infinitely until break
     option = int(input(f"""Choose an option:
 (1) Push
 (2) Pop
 (3) Exit
-
 {stack[base:top + 1]}
-
 → """))
 
     if option == 1:
