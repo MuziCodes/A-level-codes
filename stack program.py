@@ -16,7 +16,7 @@ def pop():
     if top == base - 1:  # if stack empty
         print("Underflow! cannot pop.")
     else:
-        print(stack[top], "is removed")
+        print(stack[top], "is removed")  # optional
         stack[top] = None 
         top = top - 1
 
