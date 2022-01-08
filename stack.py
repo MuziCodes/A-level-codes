@@ -25,7 +25,7 @@ while True:  # runs infinitely until break
 (1) Push
 (2) Pop
 (3) Exit
-{stack[base:top + 1]}  # doesn't show None, optional. {stack} is minimum
+{stack}
 → """))
 
     if option == 1:
@@ -37,3 +37,4 @@ while True:  # runs infinitely until break
         break
     else:
         print("Please enter a number between 1-4")
+ # {stack[base:top + 1]} to not show None, optional
