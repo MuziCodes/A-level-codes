@@ -25,7 +25,7 @@ while True:  # runs infinitely until break
 (1) Push
 (2) Pop
 (3) Exit
-{stack[base:top + 1]}
+{stack[base:top + 1]}  # doesn't show None, optional. {stack} is minimum
 → """))
 
     if option == 1:
