@@ -7,14 +7,14 @@ qlen = 0   # Queue length
 # UNCOMMENT FOR CIRCULAR QUEUE
 
 def enqueue(value):
-    global end  # , qlen
+    global end, qlen
     # if qlen < size:
         if end < size - 1:
             end += 1
         # else:
         #     end = 0
             queue[end] = value  # remove an indent for circular
-        qlen += 1
+            qlen += 1  # remove an indent for circular
 
     else:
         print("Queue full, cannot add")
@@ -30,7 +30,7 @@ def dequeue():
         #     front = 0
         # else:
         front += 1  # add an indent for circular
-    qlen -= 1
+        qlen -= 1
 
 while True:
     option = int(input(f"""Choose an option:
