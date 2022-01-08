@@ -16,10 +16,9 @@ def pop():
     if top == base - 1:  # if stack empty
         print("Underflow! cannot pop.")
     else:
-        temp = stack[top]
+        print(stack[top], "is removed")
         stack[top] = None 
         top = top - 1
-        print(temp, "is removed")
 
 while True:  # runs infinitely until break
     option = int(input(f"""Choose an option:
