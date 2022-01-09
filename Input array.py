@@ -1,8 +1,6 @@
 arr = []
 length = int(input('Enter length of list: '))
-
 # append values to empty list using for-loop
-
 for i in range(length):
     temp = int(input('Enter element to add: '))
     arr.append(temp)  # arr[length:length] = temp appends using slicing
