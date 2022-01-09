@@ -18,7 +18,7 @@ def pop():
     else:
         print(stack[top], "is removed")  # optional
         stack[top] = None 
-        top = top - 1
+        top -= 1
 
 while True:  # runs infinitely until break
     option = int(input(f"""Choose an option:
