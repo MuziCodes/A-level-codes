@@ -19,22 +19,3 @@ def pop():
         print(stack[top], "is removed")  # optional
         stack[top] = None 
         top -= 1
-
-while True:  # runs infinitely until break
-    option = int(input(f"""Choose an option:
-(1) Push
-(2) Pop
-(3) Exit
-{stack}
-→ """))
-
-    if option == 1:
-        item = input("Enter item to push: ")
-        push(item)
-    elif option == 2:
-        pop()
-    elif option == 3:
-        break
-    else:
-        print("Please enter a number between 1-4")
- # {stack[base:top + 1]} to not show None, optional
