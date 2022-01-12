@@ -6,7 +6,7 @@ class node:
 
 nullp = -1
 size = int(input("Enter size of Linked List: "))
-list = [node() for i in range(size)]  # empty Linked List
+list = [node() for i in range(size)]  # free Linked List
 # initialise pointers and link nodes
 startp = nullp
 freelistp = 0  # beginning of list
