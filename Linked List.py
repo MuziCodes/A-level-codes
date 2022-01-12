@@ -100,3 +100,6 @@ while True:
         break
     else:
         print("Please enter an option from 1-5")
+
+# A linked list STACK adds and removes nodes from the front.
+# A linked list QUEUE adds nodes to the end of the linked list and removes from the front.
