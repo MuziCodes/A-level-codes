@@ -23,20 +23,20 @@ def add(item):
         list[newnodep].data = item
         freelistp = list[freelistp].pointer
         # find insertion point
-        thisnodep = startp  # start at beginning of list
-        previousnodep = nullp
-        while thisnodep != nullp and list[thisnodep].data < item:  # not end of list
-            previousnodep = thisnodep  # remember this node
+        thisp = startp  # start at beginning of list
+        previousp = nullp
+        while thisp != nullp and list[thisp].data < item:  # not end of list
+            previousp = thisp  # remember this node
             # follow the pointer to the next node
-            thisnodep = list[thisnodep].pointer
-        if previousnodep == startp:
+            thisp = list[thisp].pointer
+        if previousp == startp:
             # insert node at start of list
             list[newnodep].pointer = startp
             startp = newnodep
         else:
             # insert new node between previous node and this node
-            list[newnodep].pointer = list[previousnodep].pointer
-            list[previousnodep].pointer = newnodep
+            list[newnodep].pointer = list[previousp].pointer
+            list[previousp].pointer = newnodep
 
 
 def search(key):
@@ -49,22 +49,22 @@ def search(key):
 
 def delete(value):
     global startp, freelistp
-    thisnodep = startp  # start at beginning of list
-    while thisnodep != nullp and list[thisnodep].data != value:  # while not end of list and value not found
+    thisp = startp  # start at beginning of list
+    while thisp != nullp and list[thisp].data != value:  # while not end of list and value not found
         # follow pointer to next node
-        previousnodep = thisnodep  # remember this node
-        thisnodep = list[thisnodep].pointer
-    if thisnodep != nullp:  # node exists in list
-        if thisnodep == startp:  # first node to be deleted
+        previousp = thisp  # remember this node
+        thisp = list[thisp].pointer
+    if thisp != nullp:  # node exists in list
+        if thisp == startp:  # first node to be deleted
             # move start pointer to the next node in list
             startp = list[startp].pointer
         else:
             # it is not the start node; so make the previous node’s pointer point to
             # the current node’s 'next' pointer; thereby removing all
             # references to the current pointer from the list
-            list[previousnodep].pointer = list[thisnodep].pointer
-        list[thisnodep].pointer = freelistp
-        freelistp = thisnodep
+            list[previousp].pointer = list[thisp].pointer
+        list[thisp].pointer = freelistp
+        freelistp = thisp
 
 
 def output():
