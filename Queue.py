@@ -32,25 +32,5 @@ def dequeue():
         front += 1  # add an indent for circular
         qlen -= 1
 
-while True:
-    option = int(input(f"""Choose an option:
-(1) EnQueue
-(2) DeQueue
-(3) Exit
-
-Queue: {queue}
-
-choose an option → """))
-
-    if option == 1:
-        value = input("Enter item to add: ")
-        enqueue(value)
-    elif option == 2:
-        dequeue()
-    elif option == 3:
-        break
-    else:
-        print("Please enter a value between 1-3")
-# {queue[front:end + 1]} to not show None, optional for line 41
 
 # kudos to Awab
