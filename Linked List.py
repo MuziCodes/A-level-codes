@@ -44,7 +44,7 @@ def search(key):
     while currentp != nullp and list[currentp].data != key:  # not end of list and key not found
         # follow pointer to next node
         currentp = list[currentp].pointer
-    print(currentp)  # pointer to node, null if not found
+    return currentp  # pointer to node, null if not found
 
 
 def delete(value):
@@ -73,33 +73,6 @@ def output():
         print(f'({list[currentp].data}, {list[currentp].pointer})') # (a, 0) (b, -1)
         # follow the pointer to the next node
         currentp = list[currentp].pointer
-
-
-while True:
-    option = int(input(f"""
-    Enter an option:
-    (1) Add Node
-    (2) Delete Node
-    (3) Search Item
-    (4) Output Nodes
-    (5) Exit
-    → """))
-
-    if option == 1:
-        item = input("Enter item to add: ")
-        add(item)
-    elif option == 2:
-        value = input("Enter value to delete: ")
-        delete(value)
-    elif option == 3:
-        key = input("Enter item to search: ")
-        search(key)
-    elif option == 4:
-        output()
-    elif option == 5:
-        break
-    else:
-        print("Please enter an option from 1-5")
 
 # A linked list STACK adds and removes nodes from the front.
 # A linked list QUEUE adds nodes to the end of the linked list and removes from the front.
