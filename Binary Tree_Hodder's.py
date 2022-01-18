@@ -5,26 +5,26 @@ class node:
         self.item = item
 
     def insert(self, item):
-        if self.item:
+        if self.item:  # if root has value
             if item < self.item:
-                if self.left is None:
-                    self.left = node(item)
+                if self.left is None:  # left node is empty
+                    self.left = node(item)  # insert
                 else:
-                    self.left.insert(item)
+                    self.left.insert(item)  # recursion
             elif item > self.item:
-                if self.right is None:
-                    self.right = node(item)
+                if self.right is None:  # right node is empty
+                    self.right = node(item)  # insert
                 else:
-                    self.right.insert(item)
+                    self.right.insert(item)  # recursion
         else:
-            self.item = item
+            self.item = item  # insert at root
 
     def search(self, item):
-        while self.item != item:
-            if item < self.item:
-                self.item = self.left
+        while self.item != item:  # loop until current node is item
+            if item < self.item:  # if item less than current node
+                self.item = self.left  # replace current node with left node
             else:
-                self.item = self.right
-            if self.item is None:
+                self.item = self.right  # else right node
+            if self.item is None:  # if item not found unil leaf node reached
                 return None
         return self.item
