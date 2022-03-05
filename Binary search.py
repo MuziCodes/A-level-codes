@@ -13,6 +13,31 @@ def binsearch(arr, key):
     else:  # ← BEWARE of indentation
         print('Not found')
 
+# ///PSEUDOCODE\\\
+
+# Found ← FALSE
+# low ← 0
+# upp ← MaxIndex - 1  // MaxIndex is LENGTH(list)
+# WHILE (low <= upp) AND NOT(Found) DO
+#     mid ← (low + upp) DIV 2
+#     IF list[mid] = key
+#       THEN
+#         Found ← TRUE
+#         RETURN mid  // equivalent of break
+#       ELSE
+#         IF list[mid] < key
+#           THEN
+#             low ← mid + 1
+#           ELSE
+#             upp ← mid - 1
+#         ENDIF
+#     ENDIF
+# ENDWHILE
+# IF Found = FALSE
+#     THEN
+#       OUTPUT "Not found"
+# ENDIF
+
 # repeated checking of the middle item in an ordered search list and discarding the half
 # of the list which does not contain the search item
 # Order of growth/time complexity of O(Log₂ n) in Big O notation
