@@ -28,17 +28,3 @@ class node:
             if self.item is None:  # if item not found unil leaf node reached
                 return None
         return self.item
-
-    
-#     FUNCTION FindElement(Item : INTEGER) RETURNS INTEGER 
-#  CurrentPointer ← RootPointer 
-#  WHILE CurrentPointer <> NullPointer  
-#   IF List[CurrentPointer].Data <> Item 
-#    THEN 
-#     CurrentPointer ← List[CurrentPointer].Pointer 
-#    ELSE 
-#     RETURN CurrentPointer 
-#   ENDIF 
-#  ENDWHILE 
-#  CurrentPointer ← NullPointer 
-#  RETURN CurrentPointer 
