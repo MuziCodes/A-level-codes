@@ -41,7 +41,7 @@ class node:
 # an algorithm to print the items from the root node to the leaf node
 
 
-def inorder(root):
+def inorder(root):  # also used to ouput all nodes in tree
     if root:
         inorder(root.left)
         print(root.item)
@@ -65,7 +65,7 @@ tree2.insert(3)
 tree2.insert(4)
 tree2.insert(5)
 inorder(tree2)
-size=int(input('Enter how many items to insert'))
+size=int(input('Enter how many items to insert: '))
 for i in range(size):
     example=node()
     temp=input('input insert item: ')
