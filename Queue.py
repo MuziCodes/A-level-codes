@@ -32,5 +32,6 @@ def dequeue():
         front += 1  # add an indent for circular
         qlen -= 1
 
+# uses FIFO
 
 # kudos to Awab
