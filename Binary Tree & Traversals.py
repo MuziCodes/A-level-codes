@@ -65,6 +65,11 @@ tree2.insert(3)
 tree2.insert(4)
 tree2.insert(5)
 inorder(tree2)
+size=int(input('Enter how many items to insert'))
+for i in range(size):
+    example=node()
+    temp=input('input insert item: ')
+    tree.insert(temp)
 
 
 # ///PSEUDOCODE - Traversal\\\
