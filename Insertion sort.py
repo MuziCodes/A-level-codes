@@ -8,14 +8,14 @@ def insertsort(arr):
 
 # ///PSEUDOCODE\\\
 
-FOR i ← 1 TO MaxIndex - 1  // MaxIndex is LENGTH(List)
-    pointer ← List[i]
-    WHILE (List[i - 1] > pointer) AND (i > 0) DO
-      List[i] ← List[i - 1]
-      i ← i - 1
-    ENDWHILE
-    List[i] ← pointer
-ENDFOR
+# FOR i ← 1 TO MaxIndex - 1  // MaxIndex is LENGTH(List)
+#     pointer ← List[i]
+#     WHILE (List[i - 1] > pointer) AND (i > 0) DO
+#       List[i] ← List[i - 1]
+#       i ← i - 1
+#     ENDWHILE
+#     List[i] ← pointer
+# ENDFOR
 
 # Has order of growth/time complexity as O(n²)
 # Performance depends on size of array and how sorted they are.
