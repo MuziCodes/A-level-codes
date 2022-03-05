@@ -19,3 +19,5 @@ def pop():
         print(stack[top], "is removed")  # optional
         stack[top] = None 
         top -= 1
+
+# uses LIFO
