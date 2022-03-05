@@ -8,17 +8,17 @@ def bubsort(arr):
 # ///PSEUDOCODE\\\
 
 # n ← MaxIndex - 1
-FOR i ← 0 TO MaxIndex - 1
-  FOR j ← 0 TO n
-    IF List[j] > List[j + 1]
-      THEN
-        Temp ← List[j]
-        List[j] ← List[j + 1]
-        List[j + 1] ← Temp
-    ENDIF
-  ENDFOR
-  n ← n - 1
-ENDFOR
+# FOR i ← 0 TO MaxIndex - 1
+#   FOR j ← 0 TO n
+#     IF List[j] > List[j + 1]
+#       THEN
+#         Temp ← List[j]
+#         List[j] ← List[j + 1]
+#         List[j + 1] ← Temp
+#     ENDIF
+#   ENDFOR
+#   n ← n - 1
+# ENDFOR
 
 # this code is inefficient as iterations continue even after array is sorted
 # to enhance, use a flag to indicate if any swaps have taken place.
