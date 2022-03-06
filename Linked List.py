@@ -70,17 +70,18 @@ def delete(value):
 def output():
     currentp = startp  # start at beginning of list
     while currentp != nullp:  # while not end of list
-        print(f'({list[currentp].data}, {list[currentp].pointer})') # (a, 0) (b, -1)
+        print(f"({list[currentp].data}, {list[currentp].pointer})")  # (a, 0) (b, -1)
         # follow the pointer to the next node
         currentp = list[currentp].pointer
 
+
 # Driver code
-add('B')
-add('L')
-add('F')
-delete('B')
+add("B")
+add("L")
+add("F")
+delete("B")
 for i in range(size):
-    temp=input('Enter value to add: ')
+    temp = input("Enter value to add: ")
     add(temp)
 output()
 
