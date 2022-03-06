@@ -1,5 +1,5 @@
 class node:
-    def __init__(self, data=None, pointer=None):  # default is None
+    def __init__(self, data=None, pointer=None):  # default is None if no value given
         self.data = data
         self.pointer = pointer
 
@@ -23,12 +23,12 @@ def add(item):
         list[newnodep].data = item
         freelistp = list[freelistp].pointer
         # find insertion point
-        thisp = startp  # start at beginning of list
+        thisnodep = startp  # start at beginning of list
         previousp = nullp
-        while thisp != nullp and list[thisp].data < item:  # not end of list
-            previousp = thisp  # remember this node
+        while thisnodep != nullp and list[thisnodep].data < item:  # not end of list
+            previousp = thisnodep  # remember this node
             # follow the pointer to the next node
-            thisp = list[thisp].pointer
+            thisnodep = list[thisnodep].pointer
         if previousp == startp:
             # insert node at start of list
             list[newnodep].pointer = startp
@@ -49,22 +49,22 @@ def search(key):
 
 def delete(value):
     global startp, freelistp
-    thisp = startp  # start at beginning of list
-    while thisp != nullp and list[thisp].data != value:  # while not end of list and value not found
+    thisnodep = startp  # start at beginning of list
+    while thisnodep != nullp and list[thisnodep].data != value:  # while not end of list and value not found
         # follow pointer to next node
-        previousp = thisp  # remember this node
-        thisp = list[thisp].pointer
-    if thisp != nullp:  # node exists in list
-        if thisp == startp:  # first node to be deleted
+        previousp = thisnodep  # remember this node
+        thisnodep = list[thisnodep].pointer
+    if thisnodep != nullp:  # node exists in list
+        if thisnodep == startp:  # first node to be deleted
             # move start pointer to the next node in list
             startp = list[startp].pointer
         else:
             # it is not the start node; so make the previous node’s pointer point to
             # the current node’s 'next' pointer; thereby removing all
             # references to the current pointer from the list
-            list[previousp].pointer = list[thisp].pointer
-        list[thisp].pointer = freelistp
-        freelistp = thisp
+            list[previousp].pointer = list[thisnodep].pointer
+        list[thisnodep].pointer = freelistp
+        freelistp = thisnodep
 
 
 def output():
@@ -73,6 +73,96 @@ def output():
         print(f'({list[currentp].data}, {list[currentp].pointer})') # (a, 0) (b, -1)
         # follow the pointer to the next node
         currentp = list[currentp].pointer
+
+# Driver code
+add('B')
+add('L')
+add('F')
+delete('B')
+for i in range(size):
+    temp=input('Enter value to add: ')
+    add(temp)
+output()
+
+# ///PSEUDOCODE\\\
+
+# CONSTANT nullp = –1
+# TYPE node
+#     DECLARE Data : STRING
+#     DECLARE Pointer : INTEGER
+# ENDTYPE
+# DECLARE startp : INTEGER
+# DECLARE freelistp : INTEGER
+# DECLARE List : ARRAY[0 : 6] OF node
+# PROCEDURE InitialiseList
+#     startp ← nullp
+#     freelistp ← 0
+#     FOR Index ← 0 TO 5
+#         List[Index].Pointer ← Index + 1
+#     NEXT Index
+#     List[6].Pointer ← nullp
+# ENDPROCEDURE
+
+# PROCEDURE InsertNode(NewItem)
+#     IF freelistp <> nullp
+#       THEN
+#         newnodep ← freelistp
+#         List[newnodep].Data ← NewItem
+#         freelistp ← List[freelistp].Pointer
+#         thisnodep ← startp
+#         prevp ← nullp
+#         WHILE thisnodep <> nullp
+#           AND List[thisnodep].Data < NewItem DO
+#             prevp ← thisnodep
+#             thisnodep ← List[thisnodep].Pointer
+#         ENDWHILE
+#         IF prevp = startp
+#           THEN
+#             List[newnodep].Pointer ← startp
+#             startp ← newnodep
+#           ELSE
+#             List[newnodep].Pointer ← List[prevp].Pointer
+#             List[prevp].Pointer ← newnodep
+#         ENDIF
+#     ENDIF
+# ENDPROCEDURE
+
+# FUNCTION FindNode(DataItem) RETURNS INTEGER
+#     currentp ← startp
+#     WHILE currentp <> nullp
+#       AND List[currentp].Data <> DataItem DO
+#         currentp ← List[currentp].Pointer
+#     ENDWHILE
+#     RETURN currentp
+# ENDFUNCTION
+
+# PROCEDURE DeleteNode(DataItem)
+#     thisnodep ← startp
+#     WHILE thisnodep <> nullp
+#       AND List[thisnodep].Data <> DataItem DO
+#         prevp ← thisnodep
+#         thisnodep ← List[thisnodep].Pointer
+#     ENDWHILE
+#     IF thisnodep <> nullp
+#       THEN
+#         IF thisnodep = startp
+#           THEN
+#             startp ← List[startp].Pointer
+#         ELSE
+#           List[prevp].Pointer ← List[thisnodep].Pointer
+#         ENDIF
+#         List[thisnodep].Pointer ← freelistp
+#         freelistp ← thisnodep
+#     ENDIF
+# ENDPROCEDURE
+
+# PROCEDURE OutputAllNodes
+#     currentp ← startp
+#     WHILE currentp <> nullp DO
+#         OUTPUT List[currentp].Data
+#         currentp ← List[currentp].Pointer
+#     ENDWHILE
+# ENDPROCEDURE
 
 # A linked list STACK adds and removes nodes from the front.
 # A linked list QUEUE adds nodes to the end of the linked list and removes from the front.
