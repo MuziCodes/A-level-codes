@@ -20,14 +20,20 @@ class node:
             self.item = item  # insert at root
 
     def search(self, item):
-        while self.item != item:  # loop until current node is item
-            if item < self.item:  # if item less than current node
-                self.item = self.left  # replace current node with left node
+        if self.item == item:
+            print('Found item!')
+            return
+        if item < self.item:
+            if self.left:
+                self.left.search(item)
             else:
-                self.item = self.right  # else right node
-            if self.item is None:  # if item not found until leaf node reached
-                return None
-        return self.item
+                print('Not found item')
+        else:
+            if self.right:
+                self.right.search(item)
+            else:
+                print('Not found item')
+       # credits to Tariq 
 
 # Binary tree is a hierarchical, non-linear ADT (Abstract Data Type)
 # consisting of nodes with maximum two children for each parent node.
@@ -59,6 +65,7 @@ tree.right = node(7)
 tree.left.left = node(1)
 tree.left.right = node(3)
 inorder(tree)
+tree.search(1)
 tree2 = node(1)
 tree2.insert(2)
 tree2.insert(3)
