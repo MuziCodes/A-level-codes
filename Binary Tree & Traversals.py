@@ -53,8 +53,8 @@ def inorder(root):  # also used to ouput all nodes in tree
         print(root.item)
         inorder(root.right)
         # just change the order to get others.
-        # preorder: put line 41 first
-        # postorder: put line 41 last
+        # preorder: put line 53 first
+        # postorder: put line 53 last
 
 
 # Driver code
